@@ -1,0 +1,11 @@
+.nextflow*
+work
+test*
+test_data/
+ref/
+input_test/
+output_test/
+Validation_notes.md
+.Rproj.user
+__pycache__/
+assets/genoflu/GenoFLU

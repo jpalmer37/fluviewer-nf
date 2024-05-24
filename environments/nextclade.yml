@@ -1,0 +1,7 @@
+name: FluViewer-nf
+channels:
+- conda-forge
+- bioconda
+- defaults
+dependencies:
+- nextclade=2.9.1
