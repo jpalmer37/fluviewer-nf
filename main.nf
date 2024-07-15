@@ -67,7 +67,6 @@ workflow {
 
     ch_reference_db = Channel.of([file(params.blastx_subtype_db).parent, file(params.blastx_subtype_db).name]).first()
 
-
     main:
 
     if (params.fastq_input == 'NO_FILE' && params.samplesheet_input == 'NO_FILE') {
@@ -99,7 +98,7 @@ workflow {
     multiqc(fastp.out.json.mix( cutadapt.out.log, ch_fastqc_collected ).collect().ifEmpty([]) )
  
     //Call clades for H1 and H3 samples
-    clade_calling(fluviewer.out.consensus_seqs)
+    clade_calling(fluviewer.out.ha_consensus_seq)
      
     snp_calling(fluviewer.out.consensus_main, ch_reference_db)
    
